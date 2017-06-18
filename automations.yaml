@@ -38,3 +38,58 @@
     data:
       message: "Basement Cabinet Left Opened"
       title: "Home Assistant Notification"
+
+- alias: 'Battery Low Alert - Kitchen Sink Water Sensor'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.kitchen_sink_water_sensor_battery
+    below: 90
+  action:
+    service: notify.gmail
+    data:
+      message: "Battery Low Alert - Kitchen Sink Water Sensor"
+      title: "Home Assistant Notification"
+
+- alias: 'Battery Low Alert - Basement Floor Sump Water Sensor'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.basement_floor_sump_water_sensor_battery
+    below: 90
+  action:
+    service: notify.gmail
+    data:
+      message: "Battery Low Alert - Basement Floor Sump Water Sensor"
+      title: "Home Assistant Notification"
+
+- alias: 'Battery Low Alert - Laundry Water Sensor'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.laundry_water_sensor_battery
+    below: 90
+  action:
+    service: notify.gmail
+    data:
+      message: "Battery Low Alert - Laundry Water Sensor"
+      title: "Home Assistant Notification"
+
+- alias: 'Battery Low Alert - Basement Cabinet Sensor Left'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.basement_cabinet_sensor_left_battery
+    below: 90
+  action:
+    service: notify.gmail
+    data:
+      message: "Battery Low Alert - Basement Cabinet Sensor Left"
+      title: "Home Assistant Notification"
+
+- alias: 'Battery Low Alert - Basement Cabinet Sensor Right'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.basement_cabinet_sensor_right_battery
+    below: 90
+  action:
+    service: notify.gmail
+    data:
+      message: "Battery Low Alert - Basement Cabinet Sensor Right"
+      title: "Home Assistant Notification"

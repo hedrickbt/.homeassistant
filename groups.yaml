@@ -42,6 +42,7 @@ Drew Bedroom:
 Caboodle:
   name: caboodle
   view: yes
+  icon: mdi:dropbox
   entities:
     - group.all_automations
     - group.all_devices
@@ -54,6 +55,14 @@ Caboodle:
 Battery:
   name: battery
   view: yes
+  icon: mdi:battery-60
+  entities:
+    - group.batteries
+
+Batteries:
+  name: batteries
+  view: no
+  icon: mdi:battery-60
   entities:
     - sensor.kitchen_sink_water_sensor_battery
     - sensor.basement_floor_sump_water_sensor_battery
