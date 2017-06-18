@@ -1,0 +1,127 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 41.574934
+  longitude: -93.766389
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 292
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+
+  customize:
+    group.all_automations:
+      hidden: false
+    group.all_devices:
+      hidden: false
+    group.all_lights:
+      hidden: false
+    group.all_locks:
+      hidden: false
+    group.all_remotes:
+      hidden: false
+    group.all_scripts:
+      hidden: false
+    group.all_switches:
+      hidden: false
+
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather Prediction
+sensor:
+  platform: yr
+
+# Text to speech
+tts:
+  platform: google
+
+# without recorder set the restore_state helper doesn't work and cannot restore the state of things like switches
+#recorder:
+#  purge_days: 30
+
+notify:
+  - name: gmail
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: brooke.hedrick.family@gmail.com
+    starttls: true
+    username: !secret gmail_family_username
+    password: !secret gmail_family_password
+    recipient:
+      - brooke.t.hedrick@gmail.com
+    sender_name: My Home Assistant
+
+group: !include groups.yaml
+automation: !include automations.yaml
+
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  client_id: home-assistant-1
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+switch:
+  - platform: mqtt
+    name: "Drew Fan"
+    command_topic: "cmnd/fan1/POWER"
+    state_topic: "stat/fan1/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "fan2"
+    command_topic: "cmnd/fan2/power"
+    state_topic: "stat/fan2/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+restore_states:
+
+# Example configuration.yaml entry
+zwave:
+  usb_path: /dev/ttyACM0
+#  config_path: /srv/homeassistant/homeassistant_venv/lib/python3.4/site-packages/libopenzwave-0.3.3-py3.4-linux-armv7l.egg/config
