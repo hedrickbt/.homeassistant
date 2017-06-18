@@ -67,7 +67,67 @@ sun:
 
 # Weather Prediction
 sensor:
-  platform: yr
+  - platform: yr
+
+  - platform: template
+    sensors:
+      kitchen_sink_water_sensor_battery:
+        value_template: >-
+          {%- if states.zwave.kitchen_sink_water_sensor_7 -%}
+            {{ states.zwave.kitchen_sink_water_sensor_7.attributes.battery_level }}
+          {%- else -%}
+            n/a
+          {%- endif -%}
+        unit_of_measurement: '%'
+        entity_id: zwave.kitchen_sink_water_sensor_7
+
+  - platform: template
+    sensors:
+      basement_floor_sump_water_sensor_battery:
+        value_template: >-
+          {%- if states.zwave.basement_floor_sump_water_sensor_4 -%}
+            {{ states.zwave.basement_floor_sump_water_sensor_4.attributes.battery_level }}
+          {%- else -%}
+            n/a
+          {%- endif -%}
+        unit_of_measurement: '%'
+        entity_id: zwave.basement_floor_sump_water_sensor_4
+
+  - platform: template
+    sensors:
+      laundry_water_sensor_battery:
+        value_template: >-
+          {%- if states.zwave.laundry_water_sensor_8 -%}
+            {{ states.zwave.laundry_water_sensor_8.attributes.battery_level }}
+          {%- else -%}
+            n/a
+          {%- endif -%}
+        unit_of_measurement: '%'
+        entity_id: zwave.laundry_water_sensor_8
+
+  - platform: template
+    sensors:
+      basement_cabinet_sensor_left_battery:
+        value_template: >-
+          {%- if states.zwave.basement_cabinet_sensor_left_5 -%}
+            {{ states.zwave.basement_cabinet_sensor_left_5.attributes.battery_level }}
+          {%- else -%}
+            n/a
+          {%- endif -%}
+        unit_of_measurement: '%'
+        entity_id: zwave.basement_cabinet_sensor_left_5
+
+  - platform: template
+    sensors:
+      basement_cabinet_sensor_right_battery:
+        value_template: >-
+          {%- if states.zwave.basement_cabinet_sensor_right_6 -%}
+            {{ states.zwave.basement_cabinet_sensor_right_6.attributes.battery_level }}
+          {%- else -%}
+            n/a
+          {%- endif -%}
+        unit_of_measurement: '%'
+        entity_id: zwave.basement_cabinet_sensor_right_6
 
 # Text to speech
 tts:

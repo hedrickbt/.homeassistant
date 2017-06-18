@@ -50,6 +50,17 @@ Caboodle:
     - group.all_remotes
     - group.all_scripts
     - group.all_switches
+
+Battery:
+  name: battery
+  view: yes
+  entities:
+    - sensor.kitchen_sink_water_sensor_battery
+    - sensor.basement_floor_sump_water_sensor_battery
+    - sensor.laundry_water_sensor_battery
+    - sensor.basement_cabinet_sensor_left_battery
+    - sensor.basement_cabinet_sensor_right_battery
+
 #### END GROUPS####
 
 
