@@ -10,7 +10,6 @@
       message: "Fan 1 turned on"
       title: "Fan 1 Notification"
 
-
 - alias: Basement Cabinet Right Notification
   trigger:
     platform: state
@@ -20,10 +19,11 @@
     from: 'off'
     to: 'on'
   action:
-    service: notify.gmail
-    data:
-      message: "Basement Cabinet Right Opened"
-      title: "Home Assistant Notification"
+    - service: notify.gmail
+      data:
+        message: "Basement Cabinet Right Opened"
+        title: "Home Assistant Notification"
+    - service: script.foscam_basement1_record
 
 - alias: Basement Cabinet Left Notification
   trigger:
@@ -34,10 +34,11 @@
     from: 'off'
     to: 'on'
   action:
-    service: notify.gmail
-    data:
-      message: "Basement Cabinet Left Opened"
-      title: "Home Assistant Notification"
+    - service: notify.gmail
+      data:
+        message: "Basement Cabinet Left Opened"
+        title: "Home Assistant Notification"
+    - service: script.foscam_basement1_record
 
 - alias: 'Battery Low Alert - Kitchen Sink Water Sensor'
   trigger:

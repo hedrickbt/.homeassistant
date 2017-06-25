@@ -193,3 +193,12 @@ camera:
     username: !secret camera_foscam_basement1_username
     password: !secret camera_foscam_basement1_password
 
+shell_command:
+  foscam_basement1_record: '/home/homeassistant/.homeassistant/scripts/cam_record_basement1.sh'
+
+
+script:
+  foscam_basement1_record:
+    sequence:
+    - service: shell_command.foscam_basement1_record
+
