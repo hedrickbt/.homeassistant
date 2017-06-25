@@ -23,6 +23,9 @@
       data:
         message: "Basement Cabinet Right Opened"
         title: "Home Assistant Notification"
+        data:
+          images:
+            - /home/pi/Videos/cam01/latest.mp4
     - service: script.foscam_basement1_record
 
 - alias: Basement Cabinet Left Notification
@@ -38,6 +41,9 @@
       data:
         message: "Basement Cabinet Left Opened"
         title: "Home Assistant Notification"
+        data:
+          images:
+            - /home/pi/Videos/cam01/latest.mp4
     - service: script.foscam_basement1_record
 
 - alias: 'Battery Low Alert - Kitchen Sink Water Sensor'

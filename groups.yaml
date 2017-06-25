@@ -8,14 +8,21 @@ default_view:
     - group.kitchen
     - group.basement
     - group.laundry
-    - group.cameras
+    - group.captures
 
 Cameras:
   name: cameras
+  view: yes
+  icon: mdi:video
+  entities:
+    - camera.cam_basement1
+
+Captures:
+  name: captures
   view: no
   icon: mdi:camera
   entities:
-    - camera.foscam_camera
+    - camera.cap_basement1
 
 Kitchen:
   name: kitchen

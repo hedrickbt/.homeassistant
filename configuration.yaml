@@ -188,10 +188,16 @@ zwave:
 
 camera:
   - platform: foscam
-    ip: 192.168.0.139
+    ip: 192.168.0.195
+    name: cam_basement1
     port: 88
     username: !secret camera_foscam_basement1_username
     password: !secret camera_foscam_basement1_password
+
+camera 2:
+  - platform: ffmpeg
+    name: cap_basement1
+    input: /home/pi/Videos/cam01/latest.mp4
 
 shell_command:
   foscam_basement1_record: '/home/homeassistant/.homeassistant/scripts/cam_record_basement1.sh'
