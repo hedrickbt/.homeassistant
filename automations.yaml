@@ -19,6 +19,8 @@
     from: 'off'
     to: 'on'
   action:
+    - service: script.foscam_basement1_record
+    - delay: 00:00:60
     - service: notify.gmail
       data:
         message: "Basement Cabinet Right Opened"
@@ -26,7 +28,6 @@
         data:
           images:
             - /home/pi/Videos/cam01/latest.mp4
-    - service: script.foscam_basement1_record
 
 - alias: Basement Cabinet Left Notification
   trigger:
@@ -37,6 +38,8 @@
     from: 'off'
     to: 'on'
   action:
+    - service: script.foscam_basement1_record
+    - delay: 00:00:60
     - service: notify.gmail
       data:
         message: "Basement Cabinet Left Opened"
@@ -44,7 +47,6 @@
         data:
           images:
             - /home/pi/Videos/cam01/latest.mp4
-    - service: script.foscam_basement1_record
 
 - alias: 'Battery Low Alert - Kitchen Sink Water Sensor'
   trigger:
