@@ -129,6 +129,18 @@ sensor:
         unit_of_measurement: '%'
         entity_id: zwave.basement_cabinet_sensor_right_6
 
+  - platform: template
+    sensors:
+      siren_1_battery:
+        value_template: >-
+          {%- if states.zwave.siren_1_9 -%}
+            {{ states.zwave.siren_1_9.attributes.battery_level }}
+          {%- else -%}
+            n/a
+          {%- endif -%}
+        unit_of_measurement: '%'
+        entity_id: zwave.siren_1_9
+
 # Text to speech
 tts:
   platform: google

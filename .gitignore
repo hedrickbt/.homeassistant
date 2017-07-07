@@ -8,6 +8,8 @@
 *.py
 *.db-shm
 *.db-wal
+*.bth
+*.backup
 OZW_Log.txt
 home-assistant.log
 home-assistant_v2.db

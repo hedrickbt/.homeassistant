@@ -84,6 +84,7 @@ Batteries:
     - sensor.laundry_water_sensor_battery
     - sensor.basement_cabinet_sensor_left_battery
     - sensor.basement_cabinet_sensor_right_battery
+    - sensor.siren_1_battery
 
 #### END GROUPS####
 

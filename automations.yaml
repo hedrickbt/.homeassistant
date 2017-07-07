@@ -102,3 +102,14 @@
     data:
       message: "Battery Low Alert - Basement Cabinet Sensor Right"
       title: "Home Assistant Notification"
+
+- alias: 'Battery Low Alert - Siren 1'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.siren_1_battery
+    below: 90
+  action:
+    service: notify.gmail
+    data:
+      message: "Battery Low Alert - Siren 1"
+      title: "Home Assistant Notification"
