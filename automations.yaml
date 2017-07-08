@@ -113,3 +113,14 @@
     data:
       message: "Battery Low Alert - Siren 1"
       title: "Home Assistant Notification"
+
+- alias: 'Battery Low Alert - Porch Env'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.porch_env_battery
+    below: 90
+  action:
+    service: notify.gmail
+    data:
+      message: "Battery Low Alert - Porch Env"
+      title: "Home Assistant Notification"

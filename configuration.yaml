@@ -141,6 +141,28 @@ sensor:
         unit_of_measurement: '%'
         entity_id: zwave.siren_1_9
 
+sensor 1:
+  - platform: mqtt
+    name: "Porch Temperature"
+    state_topic: "/haenvporch/env/temperature"
+    qos: 0
+    unit_of_measurement: "F"
+
+sensor 2:
+  - platform: mqtt
+    name: "Porch Humidity"
+    state_topic: "/haenvporch/env/humidity"
+    qos: 0
+    unit_of_measurement: "%"
+
+sensor 3:
+  - platform: mqtt
+    name: "Porch Env Battery"
+    state_topic: "/haenvporch/battery/level"
+    qos: 0
+    unit_of_measurement: "%"
+
+
 # Text to speech
 tts:
   platform: google
