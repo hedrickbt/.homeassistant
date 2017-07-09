@@ -10,38 +10,54 @@ default_view:
     - group.laundry
     - group.captures
     - group.porch
+    - group.garage
+    - group.exterior
 
-Cameras:
-  name: cameras
+cameras:
+  name: Cameras
   view: yes
   icon: mdi:video
   entities:
     - camera.cam_basement1
 
-Captures:
-  name: captures
+captures:
+  name: Captures
   view: no
   icon: mdi:camera
   entities:
     - camera.cap_basement1
 
-Kitchen:
-  name: kitchen
+kitchen:
+  name: Kitchen
   view: no
   icon: mdi:kettle
   entities:
     - binary_sensor.kitchen_sink_water_sensor_sensor_7_0
 
-Porch:
-  name: porch
+porch:
+  name: Porch
   view: no
   icon: mdi:window-closed
   entities:
     - sensor.porch_temperature
     - sensor.porch_humidity
 
-Basement:
-  name: basement
+garage:
+  name: Garage
+  view: no
+  icon: mdi:wrench
+  entities:
+    - switch.garage_can_lights_switch_10_0
+
+exterior:
+  name: Exterior
+  view: no
+  icon: mdi:window-closed
+  entities:
+    - switch.house_front_door_and_garage_lights_switch_11_0
+
+basement:
+  name: Basement
   view: no
   icon: mdi:projector-screen
   entities:
@@ -49,22 +65,22 @@ Basement:
     - binary_sensor.basement_cabinet_sensor_right_sensor_6_0
     - binary_sensor.basement_cabinet_sensor_left_sensor_5_0
 
-Laundry:
-  name: laundry
+laundry:
+  name: Laundry
   view: no
   icon: mdi:tshirt-v
   entities:
     - binary_sensor.laundry_water_sensor_sensor_8_0
 
-Drew Bedroom:
-  name: drew_bedroom
+drew_bedroom:
+  name: Drew Bedroom
   view: no
   icon: mdi:pokeball
   entities:
     - switch.drew_fan
 
-Caboodle:
-  name: caboodle
+caboodle:
+  name: Caboodle
   view: yes
   icon: mdi:dropbox
   entities:
@@ -76,15 +92,15 @@ Caboodle:
     - group.all_scripts
     - group.all_switches
 
-Battery:
-  name: battery
+battery:
+  name: Battery
   view: yes
   icon: mdi:battery-60
   entities:
     - group.batteries
 
-Batteries:
-  name: batteries
+batteries:
+  name: Batteries
   view: no
   icon: mdi:battery-60
   entities:
