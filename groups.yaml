@@ -33,6 +33,7 @@ kitchen:
   icon: mdi:kettle
   entities:
     - binary_sensor.kitchen_sink_water_sensor_sensor_7_0
+    - binary_sensor.kitchen_to_garage_door
 
 porch:
   name: Porch
@@ -48,6 +49,7 @@ garage:
   icon: mdi:wrench
   entities:
     - switch.garage_can_lights_switch_10_0
+    - binary_sensor.garage_door_overhead
 
 exterior:
   name: Exterior

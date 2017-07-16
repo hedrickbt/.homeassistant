@@ -141,6 +141,14 @@ sensor:
         unit_of_measurement: '%'
         entity_id: zwave.siren_1_9
 
+binary_sensor:
+  - platform: template
+    sensors:
+      kitchen_to_garage_door:
+        value_template: "{{ states.sensor.kitchen_to_garage_door_sensor_access_control_12_9.state == '22' }}"
+        friendly_name: 'Kitchen to Garage Door'
+        device_class: "opening"
+
 sensor 1:
   - platform: mqtt
     name: "Porch Temperature"
@@ -162,6 +170,14 @@ sensor 3:
     qos: 0
     unit_of_measurement: "%"
 
+binary_sensor 1:
+  - platform: mqtt
+    name: "Garage Door Overhead"
+    state_topic: "/hadoorgarovhd/door/open"
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    device_class: "opening"
 
 # Text to speech
 tts:
