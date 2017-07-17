@@ -148,6 +148,7 @@ binary_sensor:
         value_template: "{{ states.sensor.kitchen_to_garage_door_sensor_access_control_12_9.state == '22' }}"
         friendly_name: 'Kitchen to Garage Door'
         device_class: "opening"
+        entity_id: sensor.kitchen_to_garage_door_sensor_access_control_12_9
 
 sensor 1:
   - platform: mqtt

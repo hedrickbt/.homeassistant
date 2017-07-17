@@ -10,6 +10,7 @@
       message: "Fan 1 turned on"
       title: "Fan 1 Notification"
 
+
 - alias: Basement Cabinet Right Notification
   trigger:
     platform: state
@@ -28,6 +29,7 @@
         data:
           images:
             - /home/pi/Videos/cam01/latest.mp4
+
 
 - alias: Basement Cabinet Left Notification
   trigger:
@@ -48,6 +50,7 @@
           images:
             - /home/pi/Videos/cam01/latest.mp4
 
+
 - alias: 'Battery Low Alert - Kitchen Sink Water Sensor'
   trigger:
     platform: numeric_state
@@ -58,6 +61,7 @@
     data:
       message: "Battery Low Alert - Kitchen Sink Water Sensor"
       title: "Home Assistant Notification"
+
 
 - alias: 'Battery Low Alert - Basement Floor Sump Water Sensor'
   trigger:
@@ -70,6 +74,7 @@
       message: "Battery Low Alert - Basement Floor Sump Water Sensor"
       title: "Home Assistant Notification"
 
+
 - alias: 'Battery Low Alert - Laundry Water Sensor'
   trigger:
     platform: numeric_state
@@ -80,6 +85,7 @@
     data:
       message: "Battery Low Alert - Laundry Water Sensor"
       title: "Home Assistant Notification"
+
 
 - alias: 'Battery Low Alert - Basement Cabinet Sensor Left'
   trigger:
@@ -92,6 +98,7 @@
       message: "Battery Low Alert - Basement Cabinet Sensor Left"
       title: "Home Assistant Notification"
 
+
 - alias: 'Battery Low Alert - Basement Cabinet Sensor Right'
   trigger:
     platform: numeric_state
@@ -102,6 +109,7 @@
     data:
       message: "Battery Low Alert - Basement Cabinet Sensor Right"
       title: "Home Assistant Notification"
+
 
 - alias: 'Battery Low Alert - Siren 1'
   trigger:
@@ -114,6 +122,7 @@
       message: "Battery Low Alert - Siren 1"
       title: "Home Assistant Notification"
 
+
 - alias: 'Battery Low Alert - Porch Env'
   trigger:
     platform: numeric_state
@@ -124,3 +133,38 @@
     data:
       message: "Battery Low Alert - Porch Env"
       title: "Home Assistant Notification"
+
+
+- alias: 'Kitchen to Garage Door Opened While Overhead Garage Door is Open'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitchen_to_garage_door
+    # Optional
+    #state: on
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.garage_door_overhead
+      state: 'on'
+  action:
+    - service: notify.gmail
+      data:
+        message: "Kitchen to Garage Door Opened While Overhead Garage Door is Open"
+        title: "Home Assistant Notification"
+
+
+- alias: 'Garage Overhead Door Opened'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.garage_door_overhead
+    # Optional
+    #state: on
+    from: 'off'
+    to: 'on'
+  action:
+    - service: notify.gmail
+      data:
+        message: "Garage Overhead Door Opened"
+        title: "Home Assistant Notification"
+
