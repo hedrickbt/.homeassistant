@@ -4,6 +4,8 @@ default_view:
   icon: mdi:home
   entities:
     - updater.updater
+    - sensor.yr_symbol
+    - sun.sun
     - group.drew_bedroom
     - group.kitchen
     - group.basement
