@@ -601,7 +601,7 @@
 			</CommandClass>
 		</CommandClasses>
 	</Node>
-	<Node id="9" name="Siren 1" location="Family Room" basic="4" generic="16" specific="5" roletype="7" devicetype="3840" nodetype="0" type="Siren" listening="false" frequentListening="true" beaming="true" routing="true" max_baud_rate="40000" version="4" query_stage="CacheLoad">
+	<Node id="9" name="Siren 1" location="Family Room" basic="4" generic="16" specific="5" roletype="7" devicetype="3840" nodetype="0" type="Siren" listening="false" frequentListening="true" beaming="true" routing="true" max_baud_rate="40000" version="4" query_stage="Complete">
 		<Manufacturer id="27a" name="Zooz">
 			<Product type="3" id="88" name="Unknown: type=0003, id=0088" />
 		</Manufacturer>
@@ -624,7 +624,7 @@
 			</CommandClass>
 			<CommandClass id="112" name="COMMAND_CLASS_CONFIGURATION" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
-				<Value type="list" genre="config" instance="1" index="1" label="Siren Volume" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="3" vindex="2" size="1">
+				<Value type="list" genre="config" instance="1" index="1" label="Siren Volume" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="3" vindex="0" size="1">
 					<Help>Siren volume level; low, medium, high (default).</Help>
 					<Item label="Low" value="1" />
 					<Item label="Medium" value="2" />
@@ -647,13 +647,13 @@
 					<Item label="Medium" value="2" />
 					<Item label="High" value="3" />
 				</Value>
-				<Value type="byte" genre="config" instance="1" index="5" label="Siren Alarm Tone" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="10" value="10">
+				<Value type="byte" genre="config" instance="1" index="5" label="Siren Alarm Tone" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="10" value="1">
 					<Help>Chose one of the 10 different tones for the alarm siren. 10 is default.</Help>
 				</Value>
-				<Value type="byte" genre="config" instance="1" index="6" label="Doorbell Chime Tone" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="10" value="4">
+				<Value type="byte" genre="config" instance="1" index="6" label="Doorbell Chime Tone" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="10" value="5">
 					<Help>Chose one of the 10 different tones for the doorbell chime. 4 is default.</Help>
 				</Value>
-				<Value type="list" genre="config" instance="1" index="7" label="Siren Alarm or Doorbell Chime Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="2" vindex="1" size="1">
+				<Value type="list" genre="config" instance="1" index="7" label="Siren Alarm or Doorbell Chime Mode" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="2" vindex="0" size="1">
 					<Help>Choose between Siren Alarm (configured by Siren Alarm parameters) or Doorbell Chime (configured by Doorbell Chime paramenters). Doorbell Chime enabled by default.</Help>
 					<Item label="Siren Alarm" value="1" />
 					<Item label="Doorbell Chime" value="2" />
@@ -719,7 +719,7 @@
 			</CommandClass>
 			<CommandClass id="128" name="COMMAND_CLASS_BATTERY" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
-				<Value type="byte" genre="user" instance="1" index="0" label="Battery Level" units="%" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="93" />
+				<Value type="byte" genre="user" instance="1" index="0" label="Battery Level" units="%" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="94" />
 			</CommandClass>
 			<CommandClass id="133" name="COMMAND_CLASS_ASSOCIATION" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -1034,6 +1034,154 @@
 				<Value type="string" genre="system" instance="1" index="0" label="Library Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="3" />
 				<Value type="string" genre="system" instance="1" index="1" label="Protocol Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="4.24" />
 				<Value type="string" genre="system" instance="1" index="2" label="Application Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="5.20" />
+			</CommandClass>
+		</CommandClasses>
+	</Node>
+	<Node id="13" name="" location="" basic="4" generic="16" specific="5" roletype="5" devicetype="3840" nodetype="0" type="Siren" listening="true" frequentListening="false" beaming="true" routing="true" max_baud_rate="40000" version="4" query_stage="Complete">
+		<Manufacturer id="86" name="Aeotec">
+			<Product type="104" id="38" name="ZW056 Doorbell Gen5" />
+		</Manufacturer>
+		<CommandClasses>
+			<CommandClass id="32" name="COMMAND_CLASS_BASIC" version="1" request_flags="4" mapping="37">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="37" name="COMMAND_CLASS_SWITCH_BINARY" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+			</CommandClass>
+			<CommandClass id="90" name="COMMAND_CLASS_DEVICE_RESET_LOCALLY" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="94" name="COMMAND_CLASS_ZWAVE_PLUS_INFO" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="byte" genre="system" instance="1" index="0" label="ZWave+ Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="short" genre="system" instance="1" index="1" label="InstallerIcon" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="3840" />
+				<Value type="short" genre="system" instance="1" index="2" label="UserIcon" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="3840" />
+			</CommandClass>
+			<CommandClass id="112" name="COMMAND_CLASS_CONFIGURATION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="byte" genre="config" instance="1" index="2" label="doorbell ringtone repetitions" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="255" value="2">
+					<Help>Set the repetitions for playing doorbell ringtone. Value=1 to 255, the range of repetition is 1 to 100. Note: If the time of playing doorbell ringtone is more than 20s, the volume of ringtone will reduce to silence no matter how many repetitions of doorbell ringtone are set.</Help>
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="5" label="Default Doorbell Ringtone" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="1" max="100" value="5">
+					<Help>Set the default doorbell ringtone. Value=1-100, Specify the ringtone as default.</Help>
+				</Value>
+				<Value type="byte" genre="user" instance="1" index="6" label="Play Ringtone" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0">
+					<Help>Select a ringtone to play. Value=0, stop playing. Value=1-100, play the specified ringtone. Value=255, play the default ringtone. Value=other, ignore.</Help>
+				</Value>
+				<Value type="list" genre="user" instance="1" index="7" label="Control" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="1">
+					<Help>Playback Control</Help>
+					<Item label="Play" value="1" />
+					<Item label="Stop" value="2" />
+					<Item label="Pause" value="3" />
+					<Item label="Next" value="4" />
+					<Item label="Previous" value="5" />
+				</Value>
+				<Value type="byte" genre="config" instance="1" index="8" label="Volume" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="10" value="10">
+					<Help>Set the volume of ringtone</Help>
+				</Value>
+				<Value type="list" genre="config" instance="1" index="10" label="Swap Buttons" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="0" size="1">
+					<Help>Define functions of &quot;Button -&quot; and &quot;Button+&quot;. Button - is previous, Button+ is next.</Help>
+					<Item label="Standard" value="0" />
+					<Item label="Reversed" value="1" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="11" label="Button Short/Long Press Function" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="0" size="1">
+					<Help>Define functions of &quot;Button -&quot; and &quot;Button+&quot; when short pressing and long pressing it.</Help>
+					<Item label="Short Press - Volume, Long Press - RingTone" value="0" />
+					<Item label="Short Press - RingTone, Long Press - Volume" value="1" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="42" label="Wireless Button Status" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Help>Get Wireless Button Battery Status</Help>
+					<Item label="Normal Battery Level" value="0" />
+					<Item label="Low Battery Level" value="255" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="80" label="Notification status" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="2" vindex="0" size="1">
+					<Help>Defines the automated status notification of an associated device when status changes</Help>
+					<Item label="Nothing" value="0" />
+					<Item label="Hail" value="1" />
+					<Item label="Basic" value="2" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="81" label="Low Battery Notification status" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="1" size="1">
+					<Help>Defines the automated status notification of an associated device when the wireless button battery level changes</Help>
+					<Item label="Nothing" value="0" />
+					<Item label="Configuration Paramater 42" value="1" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="241" label="Pair Wireless Button" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="4">
+					<Help>Pair the Wireless Button with Doorbell. Value=0x55555555, Start the Wireless Button pairing mode and the blue Led will blink slowly, short press the Wireless Button once, if the blue Led change to be solid, which means the pairing is successful. Otherwise, repeat the steps. It will automatically exit the pairing mode after 8s if there is no pressing action of the Wireless Button. Note: You can send this configuration Get CC to ask the pairing result: If configuration report value=0x00000000, which means the pairing is failed. If configuration report value =0xFFFFFFFF, which means the pairing is successful.</Help>
+					<Item label="Start Pairing/Paired" value="0" />
+					<Item label="Not Pairing/Unpaired" value="0" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="252" label="Configuration Locked" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="1" vindex="0" size="1">
+					<Help>Enable/disable Configuration Locked</Help>
+					<Item label="Disable" value="0" />
+					<Item label="Enable" value="1" />
+				</Value>
+				<Value type="list" genre="config" instance="1" index="255" label="Reset To Factory Defaults" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="1" size="4">
+					<Help>Reset to factory defaults</Help>
+					<Item label="Reset to factory default setting" value="0" />
+					<Item label="Normal" value="1" />
+					<Item label="Reset to factory default setting and removed from the z-wave network" value="1431655765" />
+				</Value>
+			</CommandClass>
+			<CommandClass id="114" name="COMMAND_CLASS_MANUFACTURER_SPECIFIC" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="115" name="COMMAND_CLASS_POWERLEVEL" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="list" genre="system" instance="1" index="0" label="Powerlevel" units="dB" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Normal" value="0" />
+					<Item label="-1dB" value="1" />
+					<Item label="-2dB" value="2" />
+					<Item label="-3dB" value="3" />
+					<Item label="-4dB" value="4" />
+					<Item label="-5dB" value="5" />
+					<Item label="-6dB" value="6" />
+					<Item label="-7dB" value="7" />
+					<Item label="-8dB" value="8" />
+					<Item label="-9dB" value="9" />
+				</Value>
+				<Value type="byte" genre="system" instance="1" index="1" label="Timeout" units="seconds" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="button" genre="system" instance="1" index="2" label="Set Powerlevel" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" />
+				<Value type="byte" genre="system" instance="1" index="3" label="Test Node" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
+				<Value type="list" genre="system" instance="1" index="4" label="Test Powerlevel" units="dB" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Normal" value="0" />
+					<Item label="-1dB" value="1" />
+					<Item label="-2dB" value="2" />
+					<Item label="-3dB" value="3" />
+					<Item label="-4dB" value="4" />
+					<Item label="-5dB" value="5" />
+					<Item label="-6dB" value="6" />
+					<Item label="-7dB" value="7" />
+					<Item label="-8dB" value="8" />
+					<Item label="-9dB" value="9" />
+				</Value>
+				<Value type="short" genre="system" instance="1" index="5" label="Frame Count" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="0" />
+				<Value type="button" genre="system" instance="1" index="6" label="Test" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" />
+				<Value type="button" genre="system" instance="1" index="7" label="Report" units="" read_only="false" write_only="true" verify_changes="false" poll_intensity="0" min="0" max="0" />
+				<Value type="list" genre="system" instance="1" index="8" label="Test Status" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" vindex="0" size="1">
+					<Item label="Failed" value="0" />
+					<Item label="Success" value="1" />
+					<Item label="In Progress" value="2" />
+				</Value>
+				<Value type="short" genre="system" instance="1" index="9" label="Acked Frames" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-32768" max="32767" value="0" />
+			</CommandClass>
+			<CommandClass id="130" name="COMMAND_CLASS_HAIL" version="1" request_flags="4" after_mark="true" innif="true">
+				<Instance index="1" />
+			</CommandClass>
+			<CommandClass id="133" name="COMMAND_CLASS_ASSOCIATION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Associations num_groups="2">
+					<Group index="1" max_associations="5" label="Lifeline" auto="true">
+						<Node id="1" />
+					</Group>
+					<Group index="2" max_associations="5" label="Transmit" auto="false" />
+				</Associations>
+			</CommandClass>
+			<CommandClass id="134" name="COMMAND_CLASS_VERSION" version="1" request_flags="4" innif="true">
+				<Instance index="1" />
+				<Value type="string" genre="system" instance="1" index="0" label="Library Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="3" />
+				<Value type="string" genre="system" instance="1" index="1" label="Protocol Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="3.92" />
+				<Value type="string" genre="system" instance="1" index="2" label="Application Version" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="1.12" />
 			</CommandClass>
 		</CommandClasses>
 	</Node>
