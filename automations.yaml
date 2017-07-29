@@ -148,10 +148,26 @@
       entity_id: binary_sensor.garage_door_overhead
       state: 'on'
   action:
+    - service: switch.turn_on
+      entity_id: switch.siren_1_switch_9_0
     - service: notify.gmail
       data:
         message: "Kitchen to Garage Door Opened While Overhead Garage Door is Open"
         title: "Home Assistant Notification"
+
+
+- alias: 'Kitchen to Garage Door Closed'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitchen_to_garage_door
+    # Optional
+    #state: on
+    from: 'on'
+    to: 'off'
+  condition:
+  action:
+    - service: switch.turn_off
+      entity_id: switch.siren_1_switch_9_0
 
 
 - alias: 'Garage Overhead Door Opened'
@@ -167,4 +183,5 @@
       data:
         message: "Garage Overhead Door Opened"
         title: "Home Assistant Notification"
+
 

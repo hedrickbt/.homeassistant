@@ -611,7 +611,7 @@
 			</CommandClass>
 			<CommandClass id="37" name="COMMAND_CLASS_SWITCH_BINARY" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
-				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="False" />
+				<Value type="bool" genre="user" instance="1" index="0" label="Switch" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="0" value="True" />
 			</CommandClass>
 			<CommandClass id="90" name="COMMAND_CLASS_DEVICE_RESET_LOCALLY" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -630,7 +630,7 @@
 					<Item label="Medium" value="2" />
 					<Item label="High" value="3" />
 				</Value>
-				<Value type="list" genre="config" instance="1" index="2" label="Siren Alarm Duration" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="1" size="1">
+				<Value type="list" genre="config" instance="1" index="2" label="Siren Alarm Duration" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" vindex="3" size="1">
 					<Help>Duration of siren alarm. Default is 30 seconds.</Help>
 					<Item label="Off" value="0" />
 					<Item label="30 seconds" value="1" />
@@ -719,7 +719,7 @@
 			</CommandClass>
 			<CommandClass id="128" name="COMMAND_CLASS_BATTERY" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
-				<Value type="byte" genre="user" instance="1" index="0" label="Battery Level" units="%" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="94" />
+				<Value type="byte" genre="user" instance="1" index="0" label="Battery Level" units="%" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="86" />
 			</CommandClass>
 			<CommandClass id="133" name="COMMAND_CLASS_ASSOCIATION" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
@@ -739,7 +739,7 @@
 			</CommandClass>
 			<CommandClass id="135" name="COMMAND_CLASS_INDICATOR" version="1" request_flags="4" innif="true">
 				<Instance index="1" />
-				<Value type="byte" genre="user" instance="1" index="0" label="Indicator" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="1" />
+				<Value type="byte" genre="user" instance="1" index="0" label="Indicator" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="255" value="0" />
 			</CommandClass>
 		</CommandClasses>
 	</Node>
