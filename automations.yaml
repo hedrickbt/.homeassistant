@@ -14,7 +14,7 @@
 - alias: Basement Cabinet Right Notification
   trigger:
     platform: state
-    entity_id: binary_sensor.basement_cabinet_sensor_right_sensor_6_0
+    entity_id: binary_sensor.basement_cabinet_sensor_right_sensor
     # Optional
     #state: on
     from: 'off'
@@ -34,7 +34,7 @@
 - alias: Basement Cabinet Left Notification
   trigger:
     platform: state
-    entity_id: binary_sensor.basement_cabinet_sensor_left_sensor_5_0
+    entity_id: binary_sensor.basement_cabinet_sensor_left_sensor
     # Optional
     #state: on
     from: 'off'
@@ -149,7 +149,7 @@
       state: 'on'
   action:
     - service: switch.turn_on
-      entity_id: switch.siren_1_switch_9_0
+      entity_id: switch.siren_1_switch
     - service: notify.gmail
       data:
         message: "Kitchen to Garage Door Opened While Overhead Garage Door is Open"
@@ -167,7 +167,7 @@
   condition:
   action:
     - service: switch.turn_off
-      entity_id: switch.siren_1_switch_9_0
+      entity_id: switch.siren_1_switch
 
 
 - alias: 'Garage Overhead Door Opened'

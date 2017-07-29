@@ -73,82 +73,82 @@ sensor:
     sensors:
       kitchen_sink_water_sensor_battery:
         value_template: >-
-          {%- if states.zwave.kitchen_sink_water_sensor_7 -%}
-            {{ states.zwave.kitchen_sink_water_sensor_7.attributes.battery_level }}
+          {%- if states.zwave.kitchen_sink_water_sensor -%}
+            {{ states.zwave.kitchen_sink_water_sensor.attributes.battery_level }}
           {%- else -%}
             n/a
           {%- endif -%}
         unit_of_measurement: '%'
-        entity_id: zwave.kitchen_sink_water_sensor_7
+        entity_id: zwave.kitchen_sink_water_sensor
 
   - platform: template
     sensors:
       basement_floor_sump_water_sensor_battery:
         value_template: >-
-          {%- if states.zwave.basement_floor_sump_water_sensor_4 -%}
-            {{ states.zwave.basement_floor_sump_water_sensor_4.attributes.battery_level }}
+          {%- if states.zwave.basement_floor_sump_water_sensor -%}
+            {{ states.zwave.basement_floor_sump_water_sensor.attributes.battery_level }}
           {%- else -%}
             n/a
           {%- endif -%}
         unit_of_measurement: '%'
-        entity_id: zwave.basement_floor_sump_water_sensor_4
+        entity_id: zwave.basement_floor_sump_water_sensor
 
   - platform: template
     sensors:
       laundry_water_sensor_battery:
         value_template: >-
-          {%- if states.zwave.laundry_water_sensor_8 -%}
-            {{ states.zwave.laundry_water_sensor_8.attributes.battery_level }}
+          {%- if states.zwave.laundry_water_sensor -%}
+            {{ states.zwave.laundry_water_sensor.attributes.battery_level }}
           {%- else -%}
             n/a
           {%- endif -%}
         unit_of_measurement: '%'
-        entity_id: zwave.laundry_water_sensor_8
+        entity_id: zwave.laundry_water_sensor
 
   - platform: template
     sensors:
       basement_cabinet_sensor_left_battery:
         value_template: >-
-          {%- if states.zwave.basement_cabinet_sensor_left_5 -%}
-            {{ states.zwave.basement_cabinet_sensor_left_5.attributes.battery_level }}
+          {%- if states.zwave.basement_cabinet_sensor_left -%}
+            {{ states.zwave.basement_cabinet_sensor_left.attributes.battery_level }}
           {%- else -%}
             n/a
           {%- endif -%}
         unit_of_measurement: '%'
-        entity_id: zwave.basement_cabinet_sensor_left_5
+        entity_id: zwave.basement_cabinet_sensor_left
 
   - platform: template
     sensors:
       basement_cabinet_sensor_right_battery:
         value_template: >-
-          {%- if states.zwave.basement_cabinet_sensor_right_6 -%}
-            {{ states.zwave.basement_cabinet_sensor_right_6.attributes.battery_level }}
+          {%- if states.zwave.basement_cabinet_sensor_right -%}
+            {{ states.zwave.basement_cabinet_sensor_right.attributes.battery_level }}
           {%- else -%}
             n/a
           {%- endif -%}
         unit_of_measurement: '%'
-        entity_id: zwave.basement_cabinet_sensor_right_6
+        entity_id: zwave.basement_cabinet_sensor_right
 
   - platform: template
     sensors:
       siren_1_battery:
         value_template: >-
-          {%- if states.zwave.siren_1_9 -%}
-            {{ states.zwave.siren_1_9.attributes.battery_level }}
+          {%- if states.zwave.siren_1 -%}
+            {{ states.zwave.siren_1.attributes.battery_level }}
           {%- else -%}
             n/a
           {%- endif -%}
         unit_of_measurement: '%'
-        entity_id: zwave.siren_1_9
+        entity_id: zwave.siren_1
 
 binary_sensor:
   - platform: template
     sensors:
       kitchen_to_garage_door:
-        value_template: "{{ states.sensor.kitchen_to_garage_door_sensor_access_control_12_9.state == '22' }}"
+        value_template: "{{ states.sensor.kitchen_to_garage_door_sensor_access_control.state == '22' }}"
         friendly_name: 'Kitchen to Garage Door'
         device_class: "opening"
-        entity_id: sensor.kitchen_to_garage_door_sensor_access_control_12_9
+        entity_id: sensor.kitchen_to_garage_door_sensor_access_control
 
 sensor 1:
   - platform: mqtt
@@ -237,9 +237,9 @@ zwave:
   usb_path: /dev/ttyACM0
   polling_interval: 60000
   device_config:
-    switch.garage_can_lights_switch_10_0:
+    switch.garage_can_lights_switch:
       polling_intensity: 1
-    switch.house_front_door_and_garage_lights_switch_11_0:
+    switch.house_front_door_and_garage_lights_switch:
       polling_intensity: 1
 #  config_path: /srv/homeassistant/homeassistant_venv/lib/python3.4/site-packages/libopenzwave-0.3.3-py3.4-linux-armv7l.egg/config
 

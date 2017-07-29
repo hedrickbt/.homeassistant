@@ -32,7 +32,7 @@ kitchen:
   view: no
   icon: mdi:kettle
   entities:
-    - binary_sensor.kitchen_sink_water_sensor_sensor_7_0
+    - binary_sensor.kitchen_sink_water_sensor_sensor
     - binary_sensor.kitchen_to_garage_door
 
 porch:
@@ -48,7 +48,7 @@ garage:
   view: no
   icon: mdi:wrench
   entities:
-    - switch.garage_can_lights_switch_10_0
+    - switch.garage_can_lights_switch
     - binary_sensor.garage_door_overhead
 
 exterior:
@@ -56,23 +56,23 @@ exterior:
   view: no
   icon: mdi:window-closed
   entities:
-    - switch.house_front_door_and_garage_lights_switch_11_0
+    - switch.house_front_door_and_garage_lights_switch
 
 basement:
   name: Basement
   view: no
   icon: mdi:projector-screen
   entities:
-    - binary_sensor.basement_floor_sump_water_sensor_sensor_4_0
-    - binary_sensor.basement_cabinet_sensor_right_sensor_6_0
-    - binary_sensor.basement_cabinet_sensor_left_sensor_5_0
+    - binary_sensor.basement_floor_sump_water_sensor_sensor
+    - binary_sensor.basement_cabinet_sensor_right_sensor
+    - binary_sensor.basement_cabinet_sensor_left_sensor
 
 laundry:
   name: Laundry
   view: no
   icon: mdi:tshirt-v
   entities:
-    - binary_sensor.laundry_water_sensor_sensor_8_0
+    - binary_sensor.laundry_water_sensor_sensor
 
 drew_bedroom:
   name: Drew Bedroom
@@ -119,45 +119,45 @@ batteries:
 
 ## BEGIN ZWave **
 Kitchen Sink Water Sensor Sensor:
-  - zwave.kitchen_sink_water_sensor_7
-  - binary_sensor.kitchen_sink_water_sensor_sensor_7_0
-  - sensor.kitchen_sink_water_sensor_alarm_level_7_1
-  - sensor.kitchen_sink_water_sensor_alarm_type_7_0
-  - sensor.kitchen_sink_water_sensor_flood_7_8
-  - sensor.kitchen_sink_water_sensor_sourcenodeid_7_2
+  - zwave.kitchen_sink_water_sensor
+  - binary_sensor.kitchen_sink_water_sensor_sensor
+  - sensor.kitchen_sink_water_sensor_alarm_level
+  - sensor.kitchen_sink_water_sensor_alarm_type
+  - sensor.kitchen_sink_water_sensor_flood
+  - sensor.kitchen_sink_water_sensor_sourcenodeid
 
 Basement Floor Sump Water Sensor Sensor:
-  - zwave.basement_floor_sump_water_sensor_4
-  - binary_sensor.basement_floor_sump_water_sensor_sensor_4_0
-  - sensor.basement_floor_sump_water_sensor_alarm_level_4_1
-  - sensor.basement_floor_sump_water_sensor_alarm_type_4_0
-  - sensor.basement_floor_sump_water_sensor_flood_4_8
-  - sensor.basement_floor_sump_water_sensor_sourcenodeid_4_2
+  - zwave.basement_floor_sump_water_sensor
+  - binary_sensor.basement_floor_sump_water_sensor_sensor
+  - sensor.basement_floor_sump_water_sensor_alarm_level
+  - sensor.basement_floor_sump_water_sensor_alarm_type
+  - sensor.basement_floor_sump_water_sensor_flood
+  - sensor.basement_floor_sump_water_sensor_sourcenodeid
 
 Laundry Water Sensor Sensor:
-  - zwave.laundry_water_sensor_8
-  - binary_sensor.laundry_water_sensor_sensor_8_0
-  - binary_sensor.laundry_water_sensor_sensor_8_0
-  - sensor.laundry_water_sensor_alarm_type_8_0
-  - sensor.laundry_water_sensor_flood_8_8
-  - sensor.laundry_water_sensor_sourcenodeid_8_2
+  - zwave.laundry_water_sensor
+  - binary_sensor.laundry_water_sensor_sensor
+  - binary_sensor.laundry_water_sensor_sensor
+  - sensor.laundry_water_sensor_alarm_type
+  - sensor.laundry_water_sensor_flood
+  - sensor.laundry_water_sensor_sourcenodeid
 
 Basement Cabinet Sensor Left:
-  - zwave.basement_cabinet_sensor_left_5
-  - binary_sensor.basement_cabinet_sensor_left_sensor_5_0
-  - sensor.basement_cabinet_sensor_left_access_control_5_9
-  - sensor.basement_cabinet_sensor_left_alarm_level_5_1
-  - sensor.basement_cabinet_sensor_left_alarm_type_5_0
-  - sensor.basement_cabinet_sensor_left_burglar_5_10
-  - sensor.basement_cabinet_sensor_left_sourcenodeid_5_2
+  - zwave.basement_cabinet_sensor_left
+  - binary_sensor.basement_cabinet_sensor_left_sensor
+  - sensor.basement_cabinet_sensor_left_access_control
+  - sensor.basement_cabinet_sensor_left_alarm_level
+  - sensor.basement_cabinet_sensor_left_alarm_type
+  - sensor.basement_cabinet_sensor_left_burglar
+  - sensor.basement_cabinet_sensor_left_sourcenodeid
 
 Basement Cabinet Sensor Right:
-  - zwave.basement_cabinet_sensor_right_6
-  - binary_sensor.basement_cabinet_sensor_right_sensor_6_0
-  - sensor.basement_cabinet_sensor_right_access_control_6_9
-  - sensor.basement_cabinet_sensor_right_alarm_level_6_1
-  - sensor.basement_cabinet_sensor_right_alarm_type_6_0
-  - sensor.basement_cabinet_sensor_right_burglar_6_10
-  - sensor.basement_cabinet_sensor_right_sourcenodeid_6_2
+  - zwave.basement_cabinet_sensor_right
+  - binary_sensor.basement_cabinet_sensor_right_sensor
+  - sensor.basement_cabinet_sensor_right_access_control
+  - sensor.basement_cabinet_sensor_right_alarm_level
+  - sensor.basement_cabinet_sensor_right_alarm_type
+  - sensor.basement_cabinet_sensor_right_burglar
+  - sensor.basement_cabinet_sensor_right_sourcenodeid
 ## END ZWave **
 
