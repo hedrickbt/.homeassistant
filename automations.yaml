@@ -170,18 +170,18 @@
       entity_id: switch.siren_1_switch
 
 
-- alias: 'Garage Overhead Door Opened'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.garage_door_overhead
-    # Optional
-    #state: on
-    from: 'off'
-    to: 'on'
-  action:
-    - service: notify.gmail
-      data:
-        message: "Garage Overhead Door Opened"
-        title: "Home Assistant Notification"
+#- alias: 'Garage Overhead Door Opened'
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.garage_door_overhead
+#    # Optional
+#    #state: on
+#    from: 'off'
+#    to: 'on'
+#  action:
+#    - service: notify.gmail
+#      data:
+#        message: "Garage Overhead Door Opened"
+#        title: "Home Assistant Notification"
 
 
