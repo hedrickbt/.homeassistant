@@ -188,6 +188,8 @@ tts:
 #recorder:
 #  purge_days: 30
 
+recorder: !include recorder.yaml
+
 notify:
   - name: gmail
     platform: smtp
