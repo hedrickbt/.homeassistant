@@ -184,10 +184,6 @@ binary_sensor 1:
 tts:
   platform: google
 
-# without recorder set the restore_state helper doesn't work and cannot restore the state of things like switches
-#recorder:
-#  purge_days: 30
-
 recorder: !include recorder.yaml
 
 notify:
@@ -232,7 +228,6 @@ switch:
     payload_off: "OFF"
     retain: true
 
-restore_states:
 
 # Example configuration.yaml entry
 zwave:
