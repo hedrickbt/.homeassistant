@@ -262,3 +262,34 @@ script:
     sequence:
     - service: shell_command.foscam_basement1_record
 
+# https://home-assistant.io/components/cloud.alexa/
+cloud:
+  alexa:
+    filter:
+      include_entities:
+        - switch.garage_can_lights_switch
+        - switch.house_front_door_and_garage_lights_switch
+        - switch.drew_fan
+      include_domains:
+        - switch
+        - light
+      exclude_entities:
+        - switch.outside
+        - switch.siren_1_switch
+        - switch.fan2
+        - switch.aeotec_zw056_doorbell_gen5_switch
+    entity_config:
+      light.kitchen:
+        name: Custom Name for Alexa
+        description: The light in the kitchen
+      switch.garage_can_lights_switch:
+        name: Garage lights
+        description: The can lights in the garage
+        display_categories: LIGHT
+      switch.house_front_door_and_garage_lights_switch:
+        name: Front lights
+        description: The front door lights
+        display_categories: LIGHT
+      switch.drew_fan:
+        name: Drew's fan
+        description: Fan in Drew's bedroom
