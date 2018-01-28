@@ -115,7 +115,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.siren_1_battery
-    below: 90
+    below: 75
   action:
     service: notify.gmail
     data:

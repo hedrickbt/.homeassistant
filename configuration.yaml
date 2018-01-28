@@ -232,12 +232,22 @@ switch:
 # Example configuration.yaml entry
 zwave:
   usb_path: /dev/ttyACM0
-  polling_interval: 60000
+  polling_interval: 10000
   device_config:
     switch.garage_can_lights_switch:
       polling_intensity: 1
     switch.house_front_door_and_garage_lights_switch:
       polling_intensity: 1
+    switch.living_room_lights_switch:
+      polling_intensity: 1
+    light.dining_room_lights_level:
+      polling_intensity: 1
+      refresh_value: true
+      delay: 3
+    light.basement_lights_level:
+      polling_intensity: 1
+      refresh_value: true
+      delay: 3
 #  config_path: /srv/homeassistant/homeassistant_venv/lib/python3.4/site-packages/libopenzwave-0.3.3-py3.4-linux-armv7l.egg/config
 
 camera:
@@ -270,14 +280,17 @@ cloud:
         - switch.garage_can_lights_switch
         - switch.house_front_door_and_garage_lights_switch
         - switch.drew_fan
-      include_domains:
-        - switch
-        - light
-      exclude_entities:
-        - switch.outside
-        - switch.siren_1_switch
-        - switch.fan2
-        - switch.aeotec_zw056_doorbell_gen5_switch
+        - switch.living_room_lights_switch
+        - light.basement_lights_level
+        - light.dining_room_lights_level
+#      include_domains:
+#        - switch
+#        - light
+#      exclude_entities:
+#        - switch.outside
+#        - switch.siren_1_switch
+#        - switch.fan2
+#        - switch.aeotec_zw056_doorbell_gen5_switch
     entity_config:
       light.kitchen:
         name: Custom Name for Alexa
@@ -293,3 +306,16 @@ cloud:
       switch.drew_fan:
         name: Drew's fan
         description: Fan in Drew's bedroom
+      switch.living_room_lights_switch:
+        name: Living Room lights
+        description: The lights in the living room
+        display_categories: LIGHT
+      light.basement_lights_level:
+        name: Basement lights
+        description: The lights in the basement
+        display_categories: LIGHT
+      light.dining_room_lights_level:
+        name: Dining Room Lights
+        description: The lights in the dining room
+        display_categories: LIGHT
+

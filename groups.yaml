@@ -14,6 +14,8 @@ default_view:
     - group.porch
     - group.garage
     - group.exterior
+    - group.dining
+    - group.living
 
 cameras:
   name: Cameras
@@ -36,6 +38,20 @@ kitchen:
   entities:
     - binary_sensor.kitchen_sink_water_sensor_sensor
     - binary_sensor.kitchen_to_garage_door
+
+dining:
+  name: Dining Room
+  view: no
+  icon: mdi:food-fork-drink
+  entities:
+    - light.dining_room_lights_level
+
+living:
+  name: Living Room
+  view: no
+  icon: mdi:piano
+  entities:
+    - switch.living_room_lights_switch
 
 porch:
   name: Porch
@@ -68,6 +84,7 @@ basement:
     - binary_sensor.basement_floor_sump_water_sensor_sensor
     - binary_sensor.basement_cabinet_sensor_right_sensor
     - binary_sensor.basement_cabinet_sensor_left_sensor
+    - light.basement_lights_level
 
 laundry:
   name: Laundry
