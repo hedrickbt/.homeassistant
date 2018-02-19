@@ -185,3 +185,36 @@
 #        title: "Home Assistant Notification"
 
 
+- alias: 'Low Home Assistant disk space 15%'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.disk_use_percent_
+    above: 85
+  action:
+    service: notify.gmail
+    data:
+      message: "Low Home Assistant disk space 15%"
+      title: "Home Assistant Notification"
+
+- alias: 'Low Home Assistant disk space 10%'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.disk_use_percent_
+    above: 90
+  action:
+    service: notify.gmail
+    data:
+      message: "Low Home Assistant disk space 10%"
+      title: "Home Assistant Notification"
+
+- alias: 'Low Home Assistant disk space 5%'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.disk_use_percent_
+    above: 95
+  action:
+    service: notify.gmail
+    data:
+      message: "Low Home Assistant disk space 5%"
+      title: "Home Assistant Notification"
+

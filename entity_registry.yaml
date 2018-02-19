@@ -1,0 +1,126 @@
+binary_sensor.basement_floor_sump_water_sensor_sensor:
+  platform: zwave
+  unique_id: 4-72057594110017536
+sensor.basement_floor_sump_water_sensor_alarm_type:
+  platform: zwave
+  unique_id: 4-72057594111082497
+sensor.basement_floor_sump_water_sensor_alarm_level:
+  platform: zwave
+  unique_id: 4-72057594111082513
+sensor.basement_floor_sump_water_sensor_sourcenodeid:
+  platform: zwave
+  unique_id: 4-72057594111082529
+sensor.basement_floor_sump_water_sensor_flood:
+  platform: zwave
+  unique_id: 4-72057594111082625
+binary_sensor.basement_cabinet_sensor_left_sensor:
+  platform: zwave
+  unique_id: 5-72057594126794752
+sensor.basement_cabinet_sensor_left_alarm_type:
+  platform: zwave
+  unique_id: 5-72057594127859713
+sensor.basement_cabinet_sensor_left_alarm_level:
+  platform: zwave
+  unique_id: 5-72057594127859729
+sensor.basement_cabinet_sensor_left_sourcenodeid:
+  platform: zwave
+  unique_id: 5-72057594127859745
+sensor.basement_cabinet_sensor_left_access_control:
+  platform: zwave
+  unique_id: 5-72057594127859857
+sensor.basement_cabinet_sensor_left_burglar:
+  platform: zwave
+  unique_id: 5-72057594127859873
+binary_sensor.basement_cabinet_sensor_right_sensor:
+  platform: zwave
+  unique_id: 6-72057594143571968
+sensor.basement_cabinet_sensor_right_alarm_type:
+  platform: zwave
+  unique_id: 6-72057594144636929
+sensor.basement_cabinet_sensor_right_alarm_level:
+  platform: zwave
+  unique_id: 6-72057594144636945
+sensor.basement_cabinet_sensor_right_sourcenodeid:
+  platform: zwave
+  unique_id: 6-72057594144636961
+sensor.basement_cabinet_sensor_right_access_control:
+  platform: zwave
+  unique_id: 6-72057594144637073
+sensor.basement_cabinet_sensor_right_burglar:
+  platform: zwave
+  unique_id: 6-72057594144637089
+binary_sensor.kitchen_sink_water_sensor_sensor:
+  platform: zwave
+  unique_id: 7-72057594160349184
+sensor.kitchen_sink_water_sensor_alarm_type:
+  platform: zwave
+  unique_id: 7-72057594161414145
+sensor.kitchen_sink_water_sensor_alarm_level:
+  platform: zwave
+  unique_id: 7-72057594161414161
+sensor.kitchen_sink_water_sensor_sourcenodeid:
+  platform: zwave
+  unique_id: 7-72057594161414177
+sensor.kitchen_sink_water_sensor_flood:
+  platform: zwave
+  unique_id: 7-72057594161414273
+binary_sensor.laundry_water_sensor_sensor:
+  platform: zwave
+  unique_id: 8-72057594177126400
+sensor.laundry_water_sensor_alarm_type:
+  platform: zwave
+  unique_id: 8-72057594178191361
+sensor.laundry_water_sensor_alarm_level:
+  platform: zwave
+  unique_id: 8-72057594178191377
+sensor.laundry_water_sensor_sourcenodeid:
+  platform: zwave
+  unique_id: 8-72057594178191393
+sensor.laundry_water_sensor_flood:
+  platform: zwave
+  unique_id: 8-72057594178191489
+switch.siren_1_switch:
+  platform: zwave
+  unique_id: 9-72057594193723392
+sensor.siren_1_alarm_type:
+  platform: zwave
+  unique_id: 9-72057594194968577
+sensor.siren_1_alarm_level:
+  platform: zwave
+  unique_id: 9-72057594194968593
+sensor.siren_1_sourcenodeid:
+  platform: zwave
+  unique_id: 9-72057594194968609
+switch.garage_can_lights_switch:
+  platform: zwave
+  unique_id: 10-72057594210500608
+switch.house_front_door_and_garage_lights_switch:
+  platform: zwave
+  unique_id: 11-72057594227277824
+binary_sensor.kitchen_to_garage_door_sensor_sensor:
+  platform: zwave
+  unique_id: 12-72057594244235264
+sensor.kitchen_to_garage_door_sensor_alarm_type:
+  platform: zwave
+  unique_id: 12-72057594245300225
+sensor.kitchen_to_garage_door_sensor_alarm_level:
+  platform: zwave
+  unique_id: 12-72057594245300241
+sensor.kitchen_to_garage_door_sensor_sourcenodeid:
+  platform: zwave
+  unique_id: 12-72057594245300257
+sensor.kitchen_to_garage_door_sensor_access_control:
+  platform: zwave
+  unique_id: 12-72057594245300369
+switch.aeotec_zw056_doorbell_gen5_switch:
+  platform: zwave
+  unique_id: 13-72057594260832256
+light.dining_room_lights_level:
+  platform: zwave
+  unique_id: 14-72057594277625857
+switch.living_room_lights_switch:
+  platform: zwave
+  unique_id: 15-72057594294386688
+light.basement_lights_level:
+  platform: zwave
+  unique_id: 16-72057594311180289

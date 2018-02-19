@@ -141,6 +141,13 @@ sensor:
         unit_of_measurement: '%'
         entity_id: zwave.siren_1
 
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: memory_free
+      - type: processor_use
+
 binary_sensor:
   - platform: template
     sensors:
